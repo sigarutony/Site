@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<title>Главная</title>
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-success">
+		<div class="container">
+			<a href="" class="navbar-brand">SQLEAN</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav ml-auto mb-2">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link">Главная</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Уборка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Химчистка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">О нас</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link active">Контакты</a>
+					</li>
+				</ul>
+				<div class="d-flex">
+					<button class="btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#signInModal" >Войти</button>
+					<button class="btn btn-lg btn-light reg" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Модальное окно входа -->
+	<div class="modal fade" id="signInModal" tabindex="-1" aria-bs-labelledby="signInModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="signInModal">Войти</h5>
+					<button class="btn-close" data-bs-dismiss="modal"  aria-bs-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="row mb-3">
+							<label for="inputLogin" class="col-sm-2 col-form-label">Логин</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputLogin" placeholder="Введите логин" required>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPass" class="col-sm-2 col-form-label">Пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPass" placeholder="Введите пароль" required>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success">Войти</button>
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--Модальное окно входа-->
+	<!--Модальное окно регистрации -->
+	<div class="modal fade" id="regModal" tabindex="-1" aria-bs-labelledby="regModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="signInModal">Регистрация</h5>
+					<button class="btn-close" data-bs-dismiss="modal"  aria-bs-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<div class="row mb-3">
+							<label for="inputName" class="col-sm-2 col-form-label">Имя</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputName" required placeholder="Введите имя">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputSurname" class="col-sm-2 col-form-label">Фамилия</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputSurname" required placeholder="Введите фамилию">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputSecondName" class="col-sm-2 col-form-label">Отчество</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputSecondName" required placeholder="Введите отчество">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPhone" class="col-sm-2 col-form-label">Телефон</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputPhone" required placeholder="Введите телефон">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputLoginReg" class="col-sm-2 col-form-label">Логин</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputLoginReg" required placeholder="Введите логин">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPassReg" class="col-sm-2 col-form-label">Пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassReg" required placeholder="Введите пароль">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputRepeatPass" class="col-sm-2 col-form-label">Повторите пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputRepeatPass" requireds placeholder="Повторите пароль">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success">Зарегистрироваться</button>
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--Модальное регистрации -->
+	<section class="contact">
+		<div class="container">
+			<h2 class="cont display-4" style="font-weight: bold">Контакты</h2>
+			<br>
+			<p>г. Ярославль ул. Чайковского 55</p>
+			<p>sqlean@info.com</p>
+			<p>45-34-58</p>
+			<br>
+			<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%BB%D1%8C,%20%D1%87%D0%B0%D0%B9%D0%BA%D0%BE%D0%B2%D1%81%D0%BE%D0%B3%D0%BE%2055+(SQLEAN)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+		</div>
+	</section>
+	<footer class="text-center text-lg-start bg-light text-muted">
+		  <section class="">
+		    <div class="container text-center text-md-start mt-5">
+		      <div class="row mt-3">
+		        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Услуги
+		          </h6>
+		          <p>
+		            <a href="#!" class="text-reset">Уборка</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">Химчистка</a>
+		          </p>
+		        </div>
+		        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Полезные ссылки
+		          </h6>
+		          <p>
+		            <a href="#!" class="text-reset">Войти</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">Конструктор</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">О нас</a>
+		          </p>
+		        </div>
+		        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Контакты
+		          </h6>
+		          <p>г. Ярославль ул. Чайковского 55</p>
+		          <p>
+		            sqlean@info.com
+		          </p>
+		          <p>45-34-58</p>
+		          <p>89-45-67</p>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+		  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+		    © 2021 Copyright:
+		    <a class="text-reset fw-bold" href="index.html">SQLEAN</a>
+		  </div>
+		</footer>
+	</body>
+</html>

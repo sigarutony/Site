@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>Главная</title>
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-success">
+		<div class="container">
+			<a href="" class="navbar-brand">SQLEAN</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarContent">
+				<ul class="navbar-nav ml-auto mb-2">
+					<li class="nav-item active">
+						<a href="index.html" class="nav-link active">Главная</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Уборка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">Химчистка</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">О нас</a>
+					</li>
+					<li class="nav-item">
+						<a href="contacts.html" class="nav-link">Контакты</a>
+					</li>
+				</ul>
+				<div class="d-flex">
+					<button class="btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#signInModal" >Войти</button>
+					<button class="btn btn-lg btn-light reg" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Модальное окно входа -->
+	<div class="modal fade" id="signInModal" tabindex="-1" aria-bs-labelledby="signInModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="signInModal">Войти</h5>
+					<button class="btn-close" data-bs-dismiss="modal"  aria-bs-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="auth.php" method="POST" id="auth_form">
+						<div class="row mb-3">
+							<label for="inputLogin" class="col-sm-2 col-form-label">Логин</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputLogin" placeholder="Введите логин" required name="login">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPass" class="col-sm-2 col-form-label">Пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPass" placeholder="Введите пароль" required name="password">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success">Войти</button>
+							<button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--Модальное окно входа-->
+	<!--Модальное окно регистрации -->
+	<div class="modal fade" id="regModal" tabindex="-1" aria-bs-labelledby="regModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="signInModal">Регистрация</h5>
+					<button class="btn-close" data-bs-dismiss="modal"  aria-bs-label="close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="reg.php" method="POST" id="reg_form">
+						<div class="row mb-3">
+							<label for="inputName" class="col-sm-2 col-form-label">Имя</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputName" required placeholder="Введите имя" name="name">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputSurname" class="col-sm-2 col-form-label">Фамилия</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputSurname" required placeholder="Введите фамилию" name="surname">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputSecondName" class="col-sm-2 col-form-label">Отчество</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputSecondName" required placeholder="Введите отчество" name="secondName">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPhone" class="col-sm-2 col-form-label">Телефон</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputPhone" required placeholder="Введите телефон" name="phone">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputLoginReg" class="col-sm-2 col-form-label">Логин</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputLoginReg" required placeholder="Введите логин" name="login">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputPassReg" class="col-sm-2 col-form-label">Пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassReg" required placeholder="Введите пароль" name="password">
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="inputRepeatPass" class="col-sm-2 col-form-label">Повторите пароль</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputRepeatPass" requireds placeholder="Повторите пароль" name="passwordRepeat">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success">Зарегистрироваться</button>
+							<button class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--Модальное регистрации -->
+	<main>
+		<div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="img/slide1.jpg" alt="">
+					<div class="carousel-caption">
+	                    <h1 class="display-2">КОМАНДА ПРОФЕССИОНАЛОВ</h1>
+	                    <h3>МЫ СЛЕДИМ ЗА ИСПОЛНЕНИЕМ ОБЯЗАННОСТЕЙ СВОИХ СОТРУДНИКОВ</h3>
+	                    <button onclick="window.location.href = '';" type="button" class="btn btn-warning btn-lg">НАШИ РАБОТНИКИ</button>
+	                </div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="img/slide3.jpg" alt="">
+					<div class="carousel-caption">
+	                    <h1 class="display-2">ГАРАНТИЯ КАЧЕСТВА</h1>
+	                    <h3>ИСПОЛНЯЕМ РАБОТУ БЫСТРО И КАЧЕСТВЕННО</h3>
+	                </div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="img/slide2.png" alt="">
+					<div class="carousel-caption">
+	                    <h1 class="display-2">ПРОФЕССИОНАЛЬНЫЕ СРЕДСТВА</h1>
+	                    <h3>ИСПОЛЬЗУЕМ ТОЛЬКО ИННОВАЦИОННЫЕ РАЗРАБОТКИ ЗАРУБЕЖНЫХ БРЕНДОВ</h3>
+	                    <button onclick="window.location.href = '';" type="button" class="btn btn-warning btn-lg">Позвонить</button>
+	                </div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" role="button" href="#carouselControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" role="button" href="#carouselControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</div>
+	</main>
+    <div class="container-fluid suggest">
+        <div class="row text-center alert">
+            <div class="col-12">
+                <h1 class="display-4 main-h">МЫ ПРЕДЛАГАЕМ</h1>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid paddingcard">
+	        <div class="row padding">
+	            <div class="offset-lg-2 col-lg-5 info">
+	            	<h2 class="display-4" style="font-weight: bold">Профессиональные услуги клининга</h2>
+	            	<br>
+	            	<h4 class="display-6">Безупречная уборка по фиксированной цене</h4>
+	                <ul class="list">
+	                	<li><img src="img/1.png" alt=""><span>Постоянная и разовая уборка магазинов, предприятий, офисов</span></li>
+	                	<li><img src="img/2.png" alt=""><span>Уборка после ремонта для юр. лиц и частных клиентов</span></li>
+	                	<li><img src="img/3.png" alt=""><span>Внимательная и бережная химчистка ковров и мебели</span></li>
+	                	<li><img src="img/4.png" alt=""><span>Уборка после пожара</span></li>
+	                	<li><img src="img/5.png" alt=""><span>Мытье окон, фасадов с альпинистами и без</span></li>
+	                </ul>
+	            </div>
+		        <div class="col-lg-3 info">
+		        	<div class="card">
+		        		<div class="card-body">
+		        			<h5>Нужна уборка прямо сейчас?</h5>
+		        			<span>Заполните форму и мы Вам перезвоним в течение минуты</span>
+				            <form action="">
+				            	<div class="form-group">
+				            		<label for="name"></label>
+				            		<input id="name" type="text" class="form-control" placeholder="Ваше имя" required>
+				            	</div>
+				            	<div class="form-group">
+				            		<label for="phone"></label>
+				            		<input id="phone" type="text" class="form-control" placeholder="Ваш телефон" required>
+				            	</div>
+				            	<div class="form-group">
+				            		<label for="whatclean"></label>
+				            		<input id="whatclean" type="text" class="form-control" placeholder="Что необходимо убрать?" required>
+				            	</div>
+				            	<br>
+				            	<button class="btn btn-success">Отправить</button>
+				            </form>
+		            	</div>	
+		            </div>
+		        </div>
+	    	</div>
+    	</div>
+    	<div class="offset-lg-2">
+	        <div class="container-fluid padding service">
+		        <div class="squad row text-center padding">
+		        	<h5 class="display-6" style="font-weight: bold">Почему с нами удобно работать</h5>
+		        	<br>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Работаем 24/7</span>
+		                <br>
+		                <img src="img/why1.png" alt="gym" id="gym">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Работаем с НДС</span>
+		                <br>
+		                <img src="img/why2.png" alt="pool" id="pool">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Эффективные и безопасные средства</span>
+		                <br>
+		                <img src="img/why3.png" alt="cardio" id="cardio">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Срочный выезд 1 час при ЧП</span>
+		                <br>
+		                <img src="img/why4.png" alt="sauna" id="sauna">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Бережно очистим дорогие для вас вещи</span>
+		                <br>
+		                <img src="img/why5.png" alt="sauna" id="sauna">
+		            </div>
+		        </div>
+	    	</div>
+    	</div>
+    	<div class="offset-lg-2">
+	        <div class="container-fluid padding service">
+		        <div class="squad row text-center padding">
+		        	<h5 class="display-6" style="font-weight: bold">Как мы работаем</h5>
+		        	<br>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Выявляем фронт работ</span>
+		                <br>
+		                <img src="img/how1.png" alt="gym" id="gym">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Находим оптимальное решение</span>
+		                <br>
+		                <img src="img/how2.png" alt="pool" id="pool">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Согласование и подписание договора</span>
+		                <br>
+		                <img src="img/how3.png" alt="cardio" id="cardio">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Выезд на объект и выполнение работ</span>
+		                <br>
+		                <img src="img/how4.png" alt="sauna" id="sauna">
+		            </div>
+		            <div class="col-xs-12 col-sm-6 col-md-2">
+		                <span>Приемка работ и подписание актов</span>
+		                <br>
+		                <img src="img/how6.png" alt="sauna" id="sauna">
+		            </div>
+		        </div>
+	    	</div>
+    	</div>
+    	<div class="kostil">
+			<div class="offset-lg-12 ourserv">
+		        <div class="container padding service">
+			        <div class="row text-center padding">
+			        	<h5 class="display-6" style="font-weight: bold">МЫ ОКАЗЫВАЕМ СЛЕДУЮЩИЕ УСЛУГИ СВЯЗАННЫЕ С УБОРКОЙ:</h5>
+			        	<br>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Послестроительная уборка</span>
+			                <br>
+			                <img src="img/serv1.png" alt="gym" id="gym">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Уход за полами</span>
+			                <br>
+			                <img src="img/serv2.png" alt="pool" id="pool">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Обеспылевание</span>
+			                <br>
+			                <img src="img/serv3.png" alt="cardio" id="cardio">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Дезинфекция</span>
+			                <br>
+			                <img src="img/serv4.png" alt="sauna" id="sauna">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Удаление высолов</span>
+			                <br>
+			                <img src="img/serv5.png" alt="sauna" id="sauna">
+			            </div>
+			        </div>
+		    	</div>
+	    	</div>
+	    	<div class="offset-lg-12 ourserv">
+		        <div class="container padding service">
+			        <div class="row text-center padding">
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Гидрофобизация</span>
+			                <br>
+			                <img src="img/serv6.png" alt="gym" id="gym">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Кристаллизация мраморных поверхностей</span>
+			                <br>
+			                <img src="img/serv7.png" alt="pool" id="pool">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Работы на высоте</span>
+			                <br>
+			                <img src="img/serv8.png" alt="cardio" id="cardio">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Промышленный альпинизм</span>
+			                <br>
+			                <img src="img/serv9.png" alt="sauna" id="sauna">
+			            </div>
+			            <div class="col-xs-12 col-sm-6 col-md-2 servcard">
+			                <span>Экоклининг</span>
+			                <br>
+			                <img src="img/serv10.png" alt="sauna" id="sauna">
+			            </div>
+			        </div>
+		    	</div>
+	    	</div>
+    	</div>
+		<footer class="text-center text-lg-start bg-light text-muted">
+		  <section class="">
+		    <div class="container text-center text-md-start mt-5">
+		      <div class="row mt-3">
+		        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Услуги
+		          </h6>
+		          <p>
+		            <a href="#!" class="text-reset">Уборка</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">Химчистка</a>
+		          </p>
+		        </div>
+		        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Полезные ссылки
+		          </h6>
+		          <p>
+		            <a href="#!" class="text-reset">Войти</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">Конструктор</a>
+		          </p>
+		          <p>
+		            <a href="#!" class="text-reset">О нас</a>
+		          </p>
+		        </div>
+		        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+		          <h6 class="text-uppercase fw-bold mb-4">
+		            Контакты
+		          </h6>
+		          <p>г. Ярославль ул. Чайковского 55</p>
+		          <p>
+		            sqlean@info.com
+		          </p>
+		          <p>45-34-58</p>
+		          <p>89-45-67</p>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+		  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+		    © 2021 Copyright:
+		    <a class="text-reset fw-bold" href="index.html">SQLEAN</a>
+		  </div>
+		</footer>
+		<script type="text/javascript">
+			$("#reg_form").submit(function(e){
+		        e.preventDefault();
+		        var form_data3 = $(this).serialize();
+		        $.ajax({
+		            type:"POST",
+		            url:"reg.php",
+		            data: form_data3,
+		            success: function (form_data3){
+		                let check = $.parseJSON(form_data3);
+		                    if(check == 1){
+		                        alert("Пользователь успешно зарегистрирован!");
+		                        $('#recipient-name').val('');
+		                        $('#message-text').val('');
+		                        window.location.reload();
+		                    }
+		                    if(check == 0){
+		                        alert("Такой логин уже занят!");
+		                        $('#recipient-name').val('');
+		                        $('#message-text').val('');
+		                    }
+		                    if(check == 2) {
+		                    	alert("Пароли не совпадают!");
+		                        $('#recipient-name').val('');
+		                        $('#message-text').val('');
+		                    }
+		                }
+		            })
+		        });
+			$("#auth_form").submit(function(e){
+				e.preventDefault();
+		        var form_data4 = $(this).serialize();
+		        $.ajax({
+		            type:"POST",
+		            url:"auth.php",
+		            data: form_data4,
+		            success: function (form_data4){
+		                let check = $.parseJSON(form_data4);
+		                    if(check == 0){
+		                        alert("Неправильный логин или пароль!");
+		                        $('#recipient-name').val('');
+		                        $('#message-text').val('');
+		                    }
+		                    if(check == 2) {
+		                    	window.location.reload();
+		                    	var log = document.getElementById("inputLogin");
+		                    	localStorage.setItem("login", log.value);
+		                    }
+		                }
+		            })
+		        }); 
+		</script>
+	</body>
+</html>
